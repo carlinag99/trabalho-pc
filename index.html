@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Meu Site com Abas</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="tab">
+  <button class="tablinks" onclick="openTab(event, 'Texto')">Texto</button>
+  <button class="tablinks" onclick="openTab(event, 'Vídeo')">Vídeo</button>
+</div>
+
+<div id="Texto" class="tabcontent">
+  <p>Este é o conteúdo da aba de texto.</p>
+</div>
+
+<div id="Vídeo" class="tabcontent">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/seu_video_id" frameborder="0" allowfullscreen></iframe>
+</div>
+
+<script>
+function openTab(evt, cityName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+</script>
+
+</body>
+</html>
